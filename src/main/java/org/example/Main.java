@@ -59,13 +59,13 @@ public class Main {
         for (int i = 1; i <= attempt; i++) {
             System.out.println("Попытка №" + i);
             int input = inputInt("Введите число:");
-            if (input > random) System.out.println("Меньше...");
-            if (input < random) System.out.println("Больше...");
+            if (input > random && attempt != i) System.out.println("Загаданное число меньше, чем " + input + "...");
+            if (input < random && attempt != i) System.out.println("Загаданное число больше, чем " + input + "...");
             if (input == random) {
-                System.out.println("Вы угадали число с попытки №" + i + ", поздравляю!");
+                System.out.println("Поздравляю!!! :) Вы угадали загаданное число с попытки №" + i);
                 return;
             }
         }
-        System.out.println("Все попытки исчерпаны.");
+        System.out.println("К сожалению вы не угадали :(, я загадывал число: " + random + "\nВсе попытки исчерпаны.");
     }
 }
