@@ -14,13 +14,15 @@ public class Main {
             int max;
             while (true) {
                 max = inputInt("Введите значение \"до\":");
-                if (max <= min) {
-                    System.out.println("Число \"до\" должно быть больше числа \"от\"!\nПопробуйте ещё раз.");
-                } else {
-                    break;
-                }
+                if (max <= min) {System.out.println("Число \"до\" должно быть больше числа \"от\"!\nПопробуйте ещё раз.");}
+                else {break;}
             }
-            int attempt = inputInt("Введите желаемое количество попыток:");
+            int attempt;
+            while (true) {
+                attempt = inputInt("Введите желаемое количество попыток:\nЧисло должно быть больше 0");
+                if (attempt <= 0) {System.out.println("Вы ввели не верное число, попробуйте ещё раз.");}
+                else {break;}
+            }
             int random = randomInt(min, max);
             game(min, max, attempt, random);
 
